@@ -8,8 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleController extends AbstractController
 {
     #[Route('/articles', name: 'list_article')]
-    public function listArticle()
+    public function listArticles()
     {
-        return $this->render('article.html.twig');
+        return $this->render('page/article.html.twig');
     }
 }
