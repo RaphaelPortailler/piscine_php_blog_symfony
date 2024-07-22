@@ -8,9 +8,13 @@
 <body>
 
     {% for pokemon in pokemons %}
-        {{ pokemon.id }}
-        {{ pokemon.title }}
-        {{ pokemon.content }}
+        <h2> -- Nom du pokémon :</h2>
+        <p> - {{ pokemon.title }}</p>
+        <h2> -- ID du pokemon :</h2>
+        <p> - {{ pokemon.id }}</p>
+        <h2> -- Element du pokemon :</h2>
+        <p> - {{ pokemon.content }}</p>
+        <hr>
     {% endfor %}
 
 </body>
