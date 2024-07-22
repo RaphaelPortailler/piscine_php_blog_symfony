@@ -7,15 +7,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-    // on étend la classe AbstractController qui permet d'utiliser des fonctions utilitaires pour les controllers (twig etc)
+    // on étend la class AbstractController qui permet d'utiliser des fonctions utilitaires pour les
+    // controllers (twig etc)
 class IndexController extends AbstractController
 {
-    // annotation
-    // permet de créer une route c'est a dire une nouvelle page sur notre appli quand l'url est appelé
-    // ça éxécute automatiquement la méthode définit sous la route
+    // #[Route est une annotation qui permet de créer une route, c'est a dire une nouvelle page sur notre appli quand
+    // l'url est appelé et ça éxécute automatiquement la méthode définit sous la route
     #[Route('/', 'home')]
 public function index()
     {
-        var_dump('Hello world'); die;
+        return $this->render('index.html.twig');
     }
 }
