@@ -1,5 +1,9 @@
 {% extends'partial/base.html.twig' %}
 
+{% block metatitle %}
+    Pokémons : Liste des Pokémons
+{% endblock %}
+
 {% block body %}
     <section class="flex">
         {% for pokemon in pokemons %}
