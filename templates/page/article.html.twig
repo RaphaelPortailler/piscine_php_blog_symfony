@@ -3,19 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ 'style.css' }}">
     <title>Document</title>
 </head>
 <body>
+    <main>
+        <section class="flex">
 
-    {% for pokemon in pokemons %}
-        <h2> -- Nom du pokémon :</h2>
-        <p> - {{ pokemon.title }}</p>
-        <h2> -- ID du pokemon :</h2>
-        <p> - {{ pokemon.id }}</p>
-        <h2> -- Element du pokemon :</h2>
-        <p> - {{ pokemon.content }}</p>
-        <hr>
-    {% endfor %}
 
+
+                {% for pokemon in pokemons %}
+
+                    {% if pokemon.isPublished %}
+
+                    <div class="w30">
+                        <h2 class="white"> -- Nom du pokémon --</h2>
+                        <p class="fontSize">{{ pokemon.title }}</p>
+                        <h2 class="bronw"> -- ID du pokemon --</h2>
+                        <p class="fontSize">{{ pokemon.id }}</p>
+                        <h2 class="bronw"> -- Element du pokemon --</h2>
+                        <p class="fontSize">{{ pokemon.content }}</p>
+                    </div>
+
+                    {% endif %}
+
+                {% endfor %}
+
+
+
+        </section>
+
+    </main>
 </body>
 </html>
