@@ -4,8 +4,9 @@
 namespace App\Controller;
 
     // on appelle le chemin(namespace) des classe utilisé et symfony fera le require de ces class
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
+    use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    use Symfony\Component\Routing\Annotation\Route;
 
     // on étend la class AbstractController qui permet d'utiliser des fonctions utilitaires pour les
     // controllers (twig etc)
@@ -16,6 +17,14 @@ class IndexController extends AbstractController
     #[Route('/', 'home')]
 public function index()
     {
+
+        $request = Request::createFromGlobals();
+        $maxPrice = $request->query->get('maxPrice');
+
+        if($request->query->has('city')){
+            $city = $request->query->get('city');
+        }
+
         return $this->render('page/index.html.twig');
     }
 }
