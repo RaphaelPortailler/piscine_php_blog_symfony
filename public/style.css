@@ -8,10 +8,12 @@
 
 header {
     display: flex;
-    background-color: rgb(28, 129, 175);
+    background-color: bisque;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    height: 15vh;
+    margin-bottom: 50px;
 }
 
 nav{
@@ -27,7 +29,7 @@ ul{
 
 a{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
+    color: brown;
 }
 
 .white{
@@ -51,6 +53,11 @@ h2{
     flex-wrap: wrap;
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+#pageHome{
+    text-align: center;
 }
 
 .bronw{
@@ -61,4 +68,13 @@ h2{
     width: 30%;
     background-color: bisque;
     border: solid 2px saddlebrown;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: bisque;
+    height: 15vh;
+    align-items: center;
 }

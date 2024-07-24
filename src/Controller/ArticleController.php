@@ -5,13 +5,14 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class ArticleController extends AbstractController
 {
-    #[Route('/articles', name: 'list_article')]
-    public function listArticles()
-    {
-        $pokemons = [
+    private $pokemons;
+
+    function __construct(){
+        $this->pokemons = [
             [
                 'id' => 1,
                 'title' => 'Carapuce',
@@ -72,15 +73,38 @@ class ArticleController extends AbstractController
                 'content' => 'Pokemon normal',
                 'isPublished' => false
             ]
-
         ];
-        // $this->render('page/article.html.twig', [
-        //    'pokemons' => $pokemons
+    }
+
+    #[Route('/articles', name: 'list_article')]
+    public function listArticles()
+    {
+        //return $this->render('page/article.html.twig', [
+        //    'pokemons' => $this->pokemons
         // ]);
 
         $html = $this->renderView('page/article.html.twig', [
-            'pokemons' => $pokemons
+            'pokemons' => $this->pokemons
         ]);
         return new Response($html, 200);
     }
+
+
+    #[Route('/article2', name: 'show_article')]
+    public function showArticle(){
+        $request = Request::createFromGlobals();
+        $id = $request->query->get('id');
+
+        $pokemonFound = null;
+
+        foreach ($this->pokemons as $pokemon) {
+            if($pokemon['id'] === (int)$id) {
+                $pokemonFound = $pokemon;
+            }
+        }
+
+        return $this->render('page/article2.html.twig', [
+            'pokemon' => $pokemonFound
+        ]);
+        }
 }
