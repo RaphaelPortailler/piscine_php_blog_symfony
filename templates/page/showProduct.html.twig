@@ -1,0 +1,21 @@
+{% extends'partial/base.html.twig' %}
+
+{% block metatitle %}
+    Pokémons : Choix du Pokémons
+{% endblock %}
+
+{% block body %}
+    <section class="flex">
+        <div class="w30">
+            <h2 class="white"> -- Nom du pokémon --</h2>
+            <p class="fontSize">{{ product.title }}</p>
+            <h2 class="bronw"> -- ID du pokemon --</h2>
+            <p class="fontSize">{{ product.id }}</p>
+            <h2 class="bronw"> -- Element du pokemon --</h2>
+            <p class="fontSize">{{ product.price }}</p>
+            <p class="fontSize">-- Prix après réduction --</p>
+            <p class="fontSize">{{ product.price_reduction }}</p>
+            <div id="imgArticle"><img src="{{ asset(product.image) }}" alt=""></div>
+        </div>
+    </section>
+{% endblock %}

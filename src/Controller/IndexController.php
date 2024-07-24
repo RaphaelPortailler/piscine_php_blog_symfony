@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
     // on créer un namespace qui permet d'identifier le chemin afin d'utiliser la class actuelle
 namespace App\Controller;
 

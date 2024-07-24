@@ -1,0 +1,30 @@
+{% extends'partial/base.html.twig' %}
+
+{% block metatitle %}
+    Pokémons : Liste des Pokémons
+{% endblock %}
+
+{% block body %}
+
+    <section class="flex">
+        {% for product in products %}
+                <div class="w30">
+                    <h2 class="white"> -- Nom du pokémon --</h2>
+                    <p class="fontSize">{{ product.title }}</p>
+                    <h2 class="bronw"> -- ID du pokemon --</h2>
+                    <p class="fontSize">{{ product.id }}</p>
+                    <h2 class="bronw"> -- Element du pokemon --</h2>
+                    <p class="fontSize">{{ product.price }}</p>
+                    <p class="fontSize">-- Prix après réduction --</p>
+                    <p class="fontSize">{{ product.price_reduction }}</p>
+                    <img src="{{ asset(product.image) }}" alt="">
+
+                    <p><a href="{{ path('show_product', {id: product.id }) }}">
+                            Afficher le produit
+                        </a>
+                    </p>
+                </div>
+        {% endfor %}
+    </section>
+
+{% endblock %}

@@ -15,9 +15,9 @@
                     <p class="fontSize">{{ pokemon.title }}</p>
                     <h2 class="bronw"> -- ID du pokemon --</h2>
                     <p class="fontSize">{{ pokemon.id }}</p>
-                    <h2 class="bronw"> -- Element du pokemon --</h2>
-                    <p class="fontSize">{{ pokemon.content }}</p>
-                    <p><a href="{{ path('show_article') }}?id={{ pokemon.id }}">
+                    <h2 class="bronw"> -- Prix du pokemon --</h2>
+                    <p class="fontSize">{{ pokemon.price }}</p>
+                    <p><a href="{{ path('show_article', {id: pokemon.id }) }}">
                             Afficher l'article
                         </a>
                     </p>
