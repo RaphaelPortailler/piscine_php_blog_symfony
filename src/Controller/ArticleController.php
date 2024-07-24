@@ -102,11 +102,11 @@ class ArticleController extends AbstractController
     }
 
 
-    #[Route('/show-article', name: 'show_article')]
-    public function showArticle(Request $request):Response
+    #[Route('/show-article/{id}', name: 'show_article')]
+    public function showArticle($id):Response
     {
         // $request = Request::createFromGlobals();
-        $id = $request->query->get('id');
+        // $id = $request->query->get('id');
 
         $pokemonFound = null;
 

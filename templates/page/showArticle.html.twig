@@ -6,16 +6,14 @@
 
 {% block body %}
     <section class="flex">
-        {# {% for pokemon in pokemons %} #}
-                <div class="w30">
-                    <h2 class="white"> -- Nom du pokémon --</h2>
-                    <p class="fontSize">{{ pokemon.title }}</p>
-                    <h2 class="bronw"> -- ID du pokemon --</h2>
-                    <p class="fontSize">{{ pokemon.id }}</p>
-                    <h2 class="bronw"> -- Element du pokemon --</h2>
-                    <p class="fontSize">{{ pokemon.content }}</p>
-                    <div id="imgArticle"><img src="{{ pokemon.im }}"></div>
-                </div>
-        {# {% endfor %} #}
+        <div class="w30">
+            <h2 class="white"> -- Nom du pokémon --</h2>
+            <p class="fontSize">{{ pokemon.title }}</p>
+            <h2 class="bronw"> -- ID du pokemon --</h2>
+            <p class="fontSize">{{ pokemon.id }}</p>
+            <h2 class="bronw"> -- Element du pokemon --</h2>
+            <p class="fontSize">{{ pokemon.content }}</p>
+            <div id="imgArticle"><img src="{{ asset(pokemon.im) }}"></div>
+        </div>
     </section>
 {% endblock %}
