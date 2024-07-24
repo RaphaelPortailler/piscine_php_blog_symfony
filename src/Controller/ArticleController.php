@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -9,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ArticleController extends AbstractController
 {
-    private $pokemons;
+    private array $pokemons;
 
     function __construct(){
         $this->pokemons = [
@@ -101,8 +103,9 @@ class ArticleController extends AbstractController
 
 
     #[Route('/show-article', name: 'show_article')]
-    public function showArticle(){
-        $request = Request::createFromGlobals();
+    public function showArticle(Request $request):Response
+    {
+        // $request = Request::createFromGlobals();
         $id = $request->query->get('id');
 
         $pokemonFound = null;

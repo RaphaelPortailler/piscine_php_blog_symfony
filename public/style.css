@@ -78,3 +78,12 @@ footer{
     height: 15vh;
     align-items: center;
 }
+
+img{
+    width: 100%;
+}
+
+#imgArticle{
+    width: 30%;
+    margin: auto;
+}
