@@ -17,61 +17,71 @@ class ArticleController extends AbstractController
                 'id' => 1,
                 'title' => 'Carapuce',
                 'content' => 'Pokemon eau',
-                'isPublished' => true
+                'isPublished' => true,
+                'im' => 'img/1517278976783.jpg'
             ],
             [
                 'id' => 2,
                 'title' => 'Salamèche',
                 'content' => 'Pokemon feu',
-                'isPublished' => true
+                'isPublished' => true,
+                'im' => 'img/1517278976783.jpg'
             ],
             [
                 'id' => 3,
                 'title' => 'Bulbizarre',
                 'content' => 'Pokemon plante',
-                'isPublished' => true
+                'isPublished' => true,
+                'im' => 'img/1517278976783.jpg'
             ],
             [
                 'id' => 4,
                 'title' => 'Pikachu',
                 'content' => 'Pokemon electrique',
-                'isPublished' => true
+                'isPublished' => true,
+                'im' => 'img/1517278976783.jpg'
             ],
             [
                 'id' => 5,
                 'title' => 'Rattata',
                 'content' => 'Pokemon normal',
-                'isPublished' => false
+                'isPublished' => false,
+                'im' => 'img/1517278976783.jpg'
             ],
             [
                 'id' => 6,
                 'title' => 'Roucool',
                 'content' => 'Pokemon vol',
-                'isPublished' => true
+                'isPublished' => true,
+                'im' => 'img/1517278976783.jpg'
             ],
             [
                 'id' => 7,
                 'title' => 'Aspicot',
                 'content' => 'Pokemon insecte',
-                'isPublished' => false
+                'isPublished' => false,
+                'im' => 'img/1517278976783.jpg'
             ],
             [
                 'id' => 8,
                 'title' => 'Nosferapti',
                 'content' => 'Pokemon poison',
-                'isPublished' => false
+                'isPublished' => false,
+                'im' => 'img/1517278976783.jpg'
             ],
             [
                 'id' => 9,
                 'title' => 'Mewtwo',
                 'content' => 'Pokemon psy',
-                'isPublished' => true
+                'isPublished' => true,
+                'im' => 'img/1517278976783.jpg'
             ],
             [
                 'id' => 10,
                 'title' => 'Ronflex',
                 'content' => 'Pokemon normal',
-                'isPublished' => false
+                'isPublished' => false,
+                'im' => 'img/1517278976783.jpg'
             ]
         ];
     }
@@ -90,7 +100,7 @@ class ArticleController extends AbstractController
     }
 
 
-    #[Route('/article2', name: 'show_article')]
+    #[Route('/show-article', name: 'show_article')]
     public function showArticle(){
         $request = Request::createFromGlobals();
         $id = $request->query->get('id');
@@ -103,7 +113,7 @@ class ArticleController extends AbstractController
             }
         }
 
-        return $this->render('page/article2.html.twig', [
+        return $this->render('page/showArticle.html.twig', [
             'pokemon' => $pokemonFound
         ]);
         }
