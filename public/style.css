@@ -92,6 +92,39 @@ img{
 }
 
 #imgArticle{
-    width: 30%;
+    width: 20%;
     margin: auto;
+}
+
+#imgPokeDB{
+    width: 30%;
+    margin: 50px auto;
+    transition: all 0.8s ease;
+}
+
+#imgPokeDB:hover{
+    transform: scale(1.2);
+}
+
+#pokeDB{
+    margin-bottom: 50px;
+    padding: 10px 40px;
+}
+
+.police{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.mb{
+    margin-bottom: 40px;
+}
+
+.w80{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.bcg{
+    background-color: bisque;
+    border-radius: 30px;
 }

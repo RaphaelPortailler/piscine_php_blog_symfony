@@ -1,0 +1,27 @@
+{% extends 'partial/base.html.twig' %}
+
+{% block metatitle %}
+    Pokemon : Liste de la DB
+{% endblock %}
+
+{% block body %}
+
+    <p class="bronw fontSize police mb">Les pokémons de la DB : </p>
+        <section class="w80">
+            {% for pokemon in pokemons %}
+
+                <article id="pokeDB" class="mb bcg">
+                    <div>
+                        <h2 class="bronw police mb">{{ pokemon.title }}</h2>
+                        <p class="fontSize">Description : {{ pokemon.description }}</p>
+                        <br>
+                        <p class="fontSize">Type : {{ pokemon.type }}</p>
+                        <div id="imgPokeDB">
+                            <img src="{{ pokemon.image }}" alt="{{ pokemon.title }}"/>
+                        </div>
+                        <a href="{{ path('pokemon_by_id_db', {id: pokemon.id }) }}"> Afficher le Pokemon</a>
+                    </div>
+                </article>
+            {% endfor %}
+        </section>
+{% endblock %}
